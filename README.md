@@ -23,7 +23,7 @@ And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Qwhj0911/Mets")
+devtools::install_github("whj0911/Mets")
 ```
 
 ## Example

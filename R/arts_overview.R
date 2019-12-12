@@ -39,7 +39,11 @@ arts_overview <- function(q,
                        "dateBegin" = dateBegin,
                        "dateEnd" = dateEnd)
 
-  results <- GET(endpoint, query = query_params) %>%
+  requireNamespace("dplyr")
+  requireNamespace("httr")
+  requireNamespace("stringr")
+
+  results <- httr::GET(endpoint, query = query_params) %>%
     content()
 
   ## objectIDs that match the parameters' conditions
@@ -47,13 +51,13 @@ arts_overview <- function(q,
     unlist()
 
   ## collect urls
-  urls <- str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
+  urls <- stringr::str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
 
   ## collect raw observations
   obs <- c()
   for(url in urls){
-    request_result <- GET(url)
-    cont <- content(request_result)
+    request_result <- httr::GET(url)
+    cont <- httr::content(request_result)
     obs[[length(obs)+1]] <- unlist(cont)
   }
 
