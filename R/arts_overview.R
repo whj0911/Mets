@@ -9,10 +9,9 @@
 #' @param dateBegin Positive for A.D, negative for B.C
 #' @param dateEnd Same as "dateBegin"
 #' @return A dataframe with 15 columns
-#' @examples
-#' arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
-#' The output is a tidy dataframe including columns "objectID", "objectName", "culture", "period", "reign", "artistDisplayName", "artistDisplayBio", "medium", "dimensions", "city", "country", "region", "excavation", "classification", and "objectURL".
+#' The output is a tidy dataframe including columns "objectID", "objectName", "culture", ect.
 #'
+#' @importFrom utils head write.csv
 #' @export
 #'
 #'

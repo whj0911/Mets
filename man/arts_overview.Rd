@@ -33,14 +33,10 @@ arts_overview(
 }
 \value{
 A dataframe with 15 columns
+The output is a tidy dataframe including columns "objectID", "objectName", "culture", ect.
 }
 \description{
 arts_overview
 search artworks by defining parameters
 All parameters require a quotation and case sensitive except "q" and numbers.
-}
-\examples{
-arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
-The output is a tidy dataframe including columns "objectID", "objectName", "culture", "period", "reign", "artistDisplayName", "artistDisplayBio", "medium", "dimensions", "city", "country", "region", "excavation", "classification", and "objectURL".
-
 }
