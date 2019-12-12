@@ -3,11 +3,8 @@
 \name{arts_overview}
 \alias{arts_overview}
 \title{arts_overview
-compare the change 1st.
-compare the change 1st.
-This is a function mainly used to find masterpieces you may be interested by defining several parameters.
-The parameters consists of "q", "isOnView", "medium", "hasImages", "geoLocation", "dateBegin", and "dateEnd".
-The output is a tidy dataframe including columns "objectID", "objectName", "culture", "period", "reign", "artistDisplayName", "artistDisplayBio", "medium", "dimensions", "city", "country", "region", "excavation", "classification", and "objectURL".}
+search artworks by defining parameters
+All parameters require a quotation and case sensitive except "q" and numbers.}
 \usage{
 arts_overview(
   q,
@@ -19,11 +16,31 @@ arts_overview(
   dateEnd = NULL
 )
 }
+\arguments{
+\item{q}{The main query.}
+
+\item{isOnView}{"true" or "false".}
+
+\item{medium}{eg. "Ceramics", "Furniture", "Paintings"}
+
+\item{hasImages}{"true" or "false"}
+
+\item{geoLocation}{eg. "Europe", "France", "Paris", "China"}
+
+\item{dateBegin}{Positive for A.D, negative for B.C}
+
+\item{dateEnd}{Same as "dateBegin"}
+}
+\value{
+A dataframe with 15 columns
+}
 \description{
 arts_overview
-compare the change 1st.
-compare the change 1st.
-This is a function mainly used to find masterpieces you may be interested by defining several parameters.
-The parameters consists of "q", "isOnView", "medium", "hasImages", "geoLocation", "dateBegin", and "dateEnd".
+search artworks by defining parameters
+All parameters require a quotation and case sensitive except "q" and numbers.
+}
+\examples{
+arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
 The output is a tidy dataframe including columns "objectID", "objectName", "culture", "period", "reign", "artistDisplayName", "artistDisplayBio", "medium", "dimensions", "city", "country", "region", "excavation", "classification", and "objectURL".
+
 }

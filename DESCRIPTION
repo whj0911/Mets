@@ -1,12 +1,16 @@
 Package: Mets
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Arts Exploration
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author@R: person("Harry", "Wang", email = "hw2675@columbia.edu",
+    role = c("aut", "cre"))
+Maintainer: The package maintainer <hw2675@columbia.edu>
+Description: The package includes two functions
+    arts_overview
+    arts_images
+    The former is used to find artworks you are interested by defining several parameters.
+    The latter is show the primary image of artworks you've found.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/whj0911/Mets

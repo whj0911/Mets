@@ -1,20 +1,33 @@
 #' arts_overview
-#' compare the change 1st.
-#' compare the change 1st.
-#' This is a function mainly used to find masterpieces you may be interested by defining several parameters.
-#
-#' The parameters consists of "q", "isOnView", "medium", "hasImages", "geoLocation", "dateBegin", and "dateEnd".
-#
+#' search artworks by defining parameters
+#' All parameters require a quotation and case sensitive except "q" and numbers.
+#' @param q The main query.
+#' @param isOnView "true" or "false".
+#' @param medium eg. "Ceramics", "Furniture", "Paintings"
+#' @param hasImages "true" or "false"
+#' @param geoLocation eg. "Europe", "France", "Paris", "China"
+#' @param dateBegin Positive for A.D, negative for B.C
+#' @param dateEnd Same as "dateBegin"
+#' @return A dataframe with 15 columns
+#' @examples
+#' arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
 #' The output is a tidy dataframe including columns "objectID", "objectName", "culture", "period", "reign", "artistDisplayName", "artistDisplayBio", "medium", "dimensions", "city", "country", "region", "excavation", "classification", and "objectURL".
-#
+#'
 #' @export
-#
-#
+#'
+#'
 #' Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
+#'
+#'   Install Package:           'Cmd + Shift + B'
+#'   Check Package:             'Cmd + Shift + E'
+#'   Test Package:              'Cmd + Shift + T'
+
+
+
+
+
+
+
 
 arts_overview <- function(q,
                           isOnView = NULL,
