@@ -12,7 +12,7 @@
 arts_images <- function(objectIDs) {
 
   ## collect urls
-  urls <- str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
+  urls <- stringr::str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
 
   ## collect raw observations
   obs <- c()
@@ -38,9 +38,9 @@ arts_images <- function(objectIDs) {
   table <- do.call(rbind, images)
 
   ## build links to images
-  table$primaryImageSmall <- str_c("![](", table$primaryImageSmall, ")")
+  table$primaryImageSmall <- stringr::str_c("![](", table$primaryImageSmall, ")")
 
   ## print
-  table %>% kable()
+  table %>% knitr::kable()
 
 }

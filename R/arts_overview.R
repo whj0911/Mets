@@ -13,13 +13,6 @@
 #'
 #' @importFrom utils head write.csv
 #' @export
-#'
-#'
-#' Some useful keyboard shortcuts for package authoring:
-#'
-#'   Install Package:           'Cmd + Shift + B'
-#'   Check Package:             'Cmd + Shift + E'
-#'   Test Package:              'Cmd + Shift + T'
 
 
 arts_overview <- function(q,
