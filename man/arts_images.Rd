@@ -9,7 +9,7 @@ Input the objectIDs from the previous function that you're interested}
 arts_images(objectIDs)
 }
 \arguments{
-\item{objectIDs}{A 6 digit number. Using c(ID1, ID2) for multiple IDs}
+\item{objectIDs}{eg. c(13875, 229930) for multiple IDs}
 }
 \value{
 A table with the object ID, name, and photo

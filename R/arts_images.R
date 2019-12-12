@@ -1,7 +1,7 @@
 #' arts_images
 #' extract the primary picture of artworks matching parameters
 #' Input the objectIDs from the previous function that you're interested
-#' @param objectIDs A 6 digit number. Using c(ID1, ID2) for multiple IDs
+#' @param objectIDs eg. c(13875, 229930) for multiple IDs
 #'
 #' @return A table with the object ID, name, and photo
 #'

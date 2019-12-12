@@ -3,7 +3,7 @@
 #' All parameters require a quotation and case sensitive except "q" and numbers.
 #' @param q The main query.
 #' @param isOnView "true" or "false".
-#' @param medium eg. "Ceramics", "Furniture", "Paintings"
+#' @param medium eg. "Ceramics", "Furniture", "Quilts|Silk|Bedcovers"
 #' @param hasImages "true" or "false"
 #' @param geoLocation eg. "Europe", "France", "Paris", "China"
 #' @param dateBegin Positive for A.D, negative for B.C

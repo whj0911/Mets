@@ -21,7 +21,7 @@ arts_overview(
 
 \item{isOnView}{"true" or "false".}
 
-\item{medium}{eg. "Ceramics", "Furniture", "Paintings"}
+\item{medium}{eg. "Ceramics", "Furniture", "Quilts|Silk|Bedcovers"}
 
 \item{hasImages}{"true" or "false"}
 
