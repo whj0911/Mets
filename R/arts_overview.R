@@ -39,41 +39,45 @@ arts_overview <- function(q,
   results <- httr::GET(endpoint, query = query_params) %>%
     content()
 
-  ## objectIDs that match the parameters' conditions
-  objectIDs <- results[[2]] %>%
-    unlist()
+  ## check if the result is ZERO or not
+  if (results[[1]] == 0) {
+    cat("No object matched, try again :D")} else {
+      ## objectIDs that match the parameters' conditions
+      objectIDs <- results[[2]] %>%
+        unlist()
+      ## collect urls
+      urls <- stringr::str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
 
-  ## collect urls
-  urls <- stringr::str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
+      ## collect raw observations
+      obs <- c()
+      for(url in urls){
+        request_result <- httr::GET(url)
+        cont <- httr::content(request_result)
+        obs[[length(obs)+1]] <- unlist(cont)
+        }
 
-  ## collect raw observations
-  obs <- c()
-  for(url in urls){
-    request_result <- httr::GET(url)
-    cont <- httr::content(request_result)
-    obs[[length(obs)+1]] <- unlist(cont)
-  }
+      ## collect focused observations
+      dfs <- c()
+      for (i in 1:length(obs)) {
+        df <- obs[[i]] %>%
+          t() %>%
+          as.data.frame()
 
-  ## collect focused observations
-  dfs <- c()
-  for (i in 1:length(obs)) {
-    df <- obs[[i]] %>%
-      t() %>%
-      as.data.frame()
-
-    ## define focused variables
-    variables <- c("objectID", "objectName", "culture", "period", "reign",
+        ## define focused variables
+         variables <- c("objectID", "objectName", "culture", "period", "reign",
                    "artistDisplayName", "artistDisplayBio", "medium",
                    "dimensions", "city", "country", "region", "excavation",
                    "classification", "objectURL")
-    dfs[[length(dfs)+1]] <- df[ , variables]
-  }
 
-  ## neat dataframe
-  table <- do.call(rbind, dfs)
-  ## save as csv file
-  write.csv(table, "arts_overview.csv", row.names=TRUE)
-  ## overview
-  head(table, 6)
+         dfs[[length(dfs)+1]] <- df[ , variables]
+         }
+
+      ## neat dataframe
+      table <- do.call(rbind, dfs)
+      ## save as csv file
+      write.csv(table, "arts_overview.csv", row.names=TRUE)
+      ## overview
+      head(table, 6)
+        }
 
 }
