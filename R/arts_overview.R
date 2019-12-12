@@ -23,12 +23,6 @@
 #'   Test Package:              'Cmd + Shift + T'
 
 
-
-
-
-
-
-
 arts_overview <- function(q,
                           isOnView = NULL,
                           medium = NULL,
@@ -36,8 +30,7 @@ arts_overview <- function(q,
                           geoLocation = NULL,
                           dateBegin = NULL,
                           dateEnd = NULL) {
-  library(dplyr)
-  library(httr)
+
   endpoint <- c("https://collectionapi.metmuseum.org/public/collection/v1/search?")
   query_params <- list("q" = q,
                        "isOnView" = isOnView,
@@ -54,7 +47,6 @@ arts_overview <- function(q,
   objectIDs <- results[[2]] %>%
     unlist()
 
-  library(stringr)
   ## collect urls
   urls <- str_c("https://collectionapi.metmuseum.org/public/collection/v1/objects/", objectIDs)
 
