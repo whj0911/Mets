@@ -48,19 +48,25 @@ Input the ObjectIDs you got from the overview function
 
 ``` r
 # arts_images(c(197742, 197743))
+# arts_images(c(438815, 436703, 436965, 435997, 436706, 437439))
 ```
 
-## arts\_overview
+## Function arts\_overview
 
 There are 7 parameters: “q”, “isOnView”, “medium”, “hasImages”,
 “geoLocation”, “dateBegin”, and “dateEnd”. The q is the main query,
 which is required. Others can be ignored, but the more conditions you
-input, the less results it returns, which will make the process faster.
-eg. just try, q = “sunflowers” or “China”; isOnView = “true”; medium =
-“Silk”.
+input, the less results it returns, which makes the process faster.
+
+eg. just try, q = “sunflowers” or “China”, isOnView = “true”, medium =
+“Silk”; or q = “Auguste Renoir”, hasImages = “true”.
 
 The result shows a head of first 6 observations, and the whole dataframe
 will automatically be saved as “arts\_overview.csv” file.
+
+## Function arts\_images
+
+Multiple Input, like: c(438815, 436703, 436965, 435997, 436706, 437439)
 
 ## Keep in mind
 
@@ -68,9 +74,9 @@ The more specific parameters you input using arts\_overview, the less
 objects it returns, which helps to extract data smoothly, since there
 are more than 470,000 artworks in the Mets database.
 
-When the result you may get exceeds 100 or so, the process will become
+When the result you may get exceeds 100 or so, the process becomes
 pretty slow, or the Rstudio may collapse, or the computer even freeszes
 that definitely is not what you want.
 
-For the arts\_overview function, each parameter is case sensitive, and a
-quotation sigh is required.
+For the arts\_overview function, each parameter is case sensitive except
+for q, and a quotation sigh is required for all.
