@@ -28,18 +28,58 @@ devtools::install_github("whj0911/Mets")
 
 ## Example
 
+Make sure attach these packages
+
+``` r
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+library(stringr)
+library(knitr)
+library(httr)
+```
+
 There is a demo of the two functions
 
 ``` r
 library(Mets)
-# arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
+arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
+#>   objectID objectName culture period reign        artistDisplayName
+#> 1   197742   Armchair                      Nicolas-Quinibert Foliot
+#> 2   197743   Armchair                      Nicolas-Quinibert Foliot
+#>            artistDisplayBio                                          medium
+#> 1 1706–1776, warden 1750/52 Carved and gilded beech; wool and silk tapestry
+#> 2 1706–1776, warden 1750/52 Carved and gilded beech; wool and silk tapestry
+#>                                              dimensions city country region
+#> 1     40 1/4 x 31 x 25 1/2 in. (102.2 x 78.7 x 64.8 cm)                    
+#> 2 40 5/8 x 29 3/4 x 25 1/2 in. (103.2 x 75.6 x 64.8 cm)                    
+#>   excavation     classification
+#> 1            Woodwork-Furniture
+#> 2            Woodwork-Furniture
+#>                                                objectURL
+#> 1 https://www.metmuseum.org/art/collection/search/197742
+#> 2 https://www.metmuseum.org/art/collection/search/197743
 ```
 
 Input the ObjectIDs you got from the overview function
 
 ``` r
 library(Mets)
-# arts_images(c(197742, 197743))
+arts_images(c(197742, 197743))
+```
+
+| objectID | objectName | primaryImageSmall                                                   |
+| :------- | :--------- | :------------------------------------------------------------------ |
+| 197742   | Armchair   | ![](https://images.metmuseum.org/CRDImages/es/web-large/152737.jpg) |
+| 197743   | Armchair   | ![](https://images.metmuseum.org/CRDImages/es/web-large/152738.jpg) |
+
+``` r
 # arts_images(c(438815, 436703, 436965, 435997, 436706, 437439))
 ```
 
@@ -60,7 +100,7 @@ will automatically be saved as “arts\_overview.csv” file.
 
 Multiple Input, like: c(438815, 436703, 436965, 435997, 436706, 437439)
 Again, an ID that does not exist will be indicated on the Console,
-although few numbers ranging from 1 to 447,000 are truly absenst. eg,
+although few numbers ranging from 1 to 470,000 are truly absenst. eg,
 try 197, 1970, 19700, and 197000.
 
 ## Keep in mind
