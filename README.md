@@ -100,8 +100,8 @@ will automatically be saved as “arts\_overview.csv” file.
 
 Multiple Input, like: c(438815, 436703, 436965, 435997, 436706, 437439)
 Again, an ID that does not exist will be indicated on the Console,
-although few numbers ranging from 1 to 470,000 are truly absenst. eg,
-try 197, 1970, 19700, and 197000.
+although few numbers ranging from 1 to 470,000 are truly absent. eg, try
+197, 1970, 19700, and 197000.
 
 ## Keep in mind
 
