@@ -18,9 +18,20 @@ arts_images <- function(objectIDs) {
   obs <- c()
   for(url in urls){
     request_result <- GET(url)
-    cont <- content(request_result)
-    obs[[length(obs)+1]] <- unlist(cont)
+
+    ## check if there is a false ID that doesn't exist
+    if(httr::http_error(request_result)){
+      falseID <- stringr::str_sub(url, 66, )
+      warning("objectID ")
+      cat(falseID)
+      warning(" does not exist! Check your typo :D
+")
+    } else {
+      cont <- httr::content(request_result)
+      obs[[length(obs)+1]] <- unlist(cont)
+    }
   }
+
 
   ## collect focused observations
   images <- c()

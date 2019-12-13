@@ -28,25 +28,17 @@ devtools::install_github("whj0911/Mets")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+There is a demo of the two functions
 
 ``` r
 library(Mets)
-## arts_overview
-
-## arts_images
-```
-
-There is a demo of the two
-functions
-
-``` r
 # arts_overview(q = "french", isOnView = "true", hasImages = "true", medium = "Silk")
 ```
 
 Input the ObjectIDs you got from the overview function
 
 ``` r
+library(Mets)
 # arts_images(c(197742, 197743))
 # arts_images(c(438815, 436703, 436965, 435997, 436706, 437439))
 ```
@@ -67,6 +59,9 @@ will automatically be saved as “arts\_overview.csv” file.
 ## Function arts\_images
 
 Multiple Input, like: c(438815, 436703, 436965, 435997, 436706, 437439)
+Again, an ID that does not exist will be indicated on the Console,
+although few numbers ranging from 1 to 447,000 are truly absenst. eg,
+try 197, 1970, 19700, and 197000.
 
 ## Keep in mind
 
